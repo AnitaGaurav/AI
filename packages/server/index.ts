@@ -1,21 +1,21 @@
-import express from "express";
-import type { Request, Response } from "express";
-import dotenv from "dotenv";
+import express from 'express';
+import type { Request, Response } from 'express';
+import dotenv from 'dotenv';
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
-const apikey = '1245'
+const apikey = '1245';
 
 app.get('/', (req: Request, res: Response) => {
-    res.send(process.env.OPENAI_API_KEY);
+   res.send(process.env.OPENAI_API_KEY);
 });
 
 app.get('/api/hello', (req: Request, res: Response) => {
-    res.json({message: 'Hello World!'});
+   res.json({ message: 'Hello World!' });
 });
 
-app.listen(port, () =>{
-    console.log(`Server is running on anita http://localhost${port}`);
+app.listen(port, () => {
+   console.log(`Server is running on anita http://localhost${port}`);
 });
